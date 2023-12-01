@@ -1,5 +1,6 @@
 package com.ll.demo.boundedContext.article.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.ll.demo.base.baseEntity.BaseEntity;
 import com.ll.demo.boundedContext.member.entity.Member;
 import jakarta.persistence.*;
@@ -19,6 +20,7 @@ import static lombok.AccessLevel.PROTECTED;
 public class Article extends BaseEntity {
 
   @ManyToOne(fetch = LAZY)
+  @JsonIgnore
   private Member author;
 
   private String subject;
